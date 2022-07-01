@@ -1,5 +1,4 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+//I received a log of help from my tutor  Samuel Cordova. He allowed me to move through the logic on my own, but helped to give some guidnace when I got stuck.
 
 //PSEUDO CODE COMMENTS
 // function to start the process
@@ -11,9 +10,10 @@ var generateBtn = document.querySelector("#generate");
 // after all prompts answered, a password that matches criteria will be generated
 // after pw generation it is displayed in alert or written to the page
 
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
 // these are all of the possible character options defined into separate variables
-var enter;
 var specialChar = ['@', '$', '*', '!', '%', '&', '#', '?', '>', '.', '=', '+', '(', '-', ')', '<', '/', '\\', ';', '[', ']', ':', '{', '}', '|', '"', "'", '_'];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ];
 var lowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -25,6 +25,7 @@ function criteriaOptions() {
     alert ("Password length must be between 8 and 128 characters.");
     return null;
   }
+  //confirm essentially gives a boolean option: true/false
   var specialCharConfirm = confirm("Would you like to include special characters?")
   var numbersConfirm = confirm("Would you like to include numbers?")
   var lowerCaseConfirm = confirm("Would you like to include lower case letters?")
@@ -82,6 +83,7 @@ function generatePassword() {
     allCharacters = allCharacters.concat(specialChar);
     //will push a random amount of special characters using math.random
     randomChars.push(randomNum(specialChar));
+    // have to add pw.Length-- so that these individual functions dont each run once to add 1 character to randomChars and THEN the for loop below adds charcters = to pwLength
     options.pwLength--
   }
   if (options.numbersConfirm) {
