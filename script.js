@@ -82,32 +82,36 @@ function generatePassword() {
     allCharacters = allCharacters.concat(specialChar);
     //will push a random amount of special characters using math.random
     randomChars.push(randomNum(specialChar));
+    options.pwLength--
   }
   if (options.numbersConfirm) {
     allCharacters = allCharacters.concat(numbers);
     //will push a random amount of numbers using math.random
     randomChars.push(randomNum(numbers));
+    options.pwLength--
   }
   if (options.lowerCaseConfirm) {
     allCharacters = allCharacters.concat(lowerCaseLetters);
     //will push a random amount of lower case letters using math.random
     randomChars.push(randomNum(lowerCaseLetters));
+    options.pwLength--
   }
   if (options.upperCaseConfirm) {
     allCharacters = allCharacters.concat(upperCaseLetters);
     //will push a random amount of upper case letters using math.random
     randomChars.push(randomNum(upperCaseLetters));
+    options.pwLength--
   }
 
   //need to write code that will take all of these if statements and the random values from each one and make a password at the length selected in pwLength
 
-  for (let i = 0; i <= pwLength.length; i+) {
+  for (let i = 1; i <= options.pwLength; i++) {
+    randomChars.push(randomNum(allCharacters));
   }
+  return randomChars.join('')
 
-  console.log(allCharacters);
-  console.log(randomChars);
-  
 }
+
 
 // Add event listener to generate button
 //invokes writePassword function
