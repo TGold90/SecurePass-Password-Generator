@@ -1,14 +1,3 @@
-//I received a log of help from my tutor  Samuel Cordova. He allowed me to move through the logic on my own, but helped to give some guidnace when I got stuck.
-
-//PSEUDO CODE COMMENTS
-// function to start the process
-// inside of this function I am expected to be presented with password criteria *prompts*
-// user must select which criteria to include in password
-// user must select a password length between 8 and 128
-// user selects which char types to include (lowercase, uppercase, numeric, special chars)
-// after the selection process we need ot validate that at least 1 has been selected
-// after all prompts answered, a password that matches criteria will be generated
-// after pw generation it is displayed in alert or written to the page
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -71,8 +60,6 @@ function randomNum(arr) {
 //this function will generate a password based off of the criteria selected in the criteriaOptions (invokes criteriaOptions) function 
 function generatePassword() {
   var options = criteriaOptions();
-  //final result
-  var finalResult = [];
   //array of all possible characters
   var allCharacters = [];
   //random amount of each character array
@@ -105,7 +92,7 @@ function generatePassword() {
     options.pwLength--
   }
 
-  //need to write code that will take all of these if statements and the random values from each one and make a password at the length selected in pwLength
+  //for loop to add all types of characters into one array
 
   for (let i = 1; i <= options.pwLength; i++) {
     randomChars.push(randomNum(allCharacters));
