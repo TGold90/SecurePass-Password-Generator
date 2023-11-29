@@ -42,7 +42,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 function randomNum(arr) {
@@ -67,15 +66,12 @@ function generatePassword() {
   }
   if (options.numbersConfirm) {
     allCharacters = allCharacters.concat(numbers);
-    //will push a random amount of numbers using math.random
   }
   if (options.lowerCaseConfirm) {
     allCharacters = allCharacters.concat(lowerCaseLetters);
-    //will push a random amount of lower case letters using math.random
   }
   if (options.upperCaseConfirm) {
     allCharacters = allCharacters.concat(upperCaseLetters);
-    //will push a random amount of upper case letters using math.random
   }
   //for loop to add all types of characters into one array
   for (let i = 1; i <= options.pwLength; i++) {
